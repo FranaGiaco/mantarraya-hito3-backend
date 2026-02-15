@@ -2,8 +2,8 @@ import pkg from "pg"
 const { Pool } = pkg
 
 export const pool = new Pool({
-  database: "mantarraya",
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 })
-
-
-
